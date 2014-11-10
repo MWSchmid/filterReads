@@ -1,0 +1,4 @@
+#ifndef FILTERFUNCTION_H
+#define FILTERFUNCTION_H
+
+#endif // FILTERFUNCTION_H
