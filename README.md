@@ -1,6 +1,22 @@
 filterReads
 ===========
 
-I am currently working on a program that filters short reads using a set of defined sequences which shall be ignored (the motivation behind this was the observation that some RNA-Seq samples have an obscene number of reads aligning to ribosomal DNA). Optionally it will also filter low quality/complexity reads.
+I am currently working on a (rather simple) program that filters short reads using a set of defined sequences which shall be ignored (the motivation behind this was the observation that some RNA-Seq samples have an obscene number of reads aligning to ribosomal DNA). I uploaded an early version. The filter based on sequences seems to work. The other filters are not tested yet. Note that one requires the qtiocompressor to compile it (more info in future or on request). I recommend running this version in any case from the command line (to see what happens in the background).
 
-Linux 64 bit binaries and source code will be available soon (somewhen in November 2014).
+Additional documentation and so on will follow in the next weeks.
+
+[Binary for Ubuntu-like linux](https://github.com/MWSchmid/filterReads/blob/master/p502filterReads_linux_64bit?raw=true)
+
+To start a GUI:
+
+```shell
+./p502filterReads
+```
+
+To run on command-line:
+
+```shell
+./p502filterReads -c arguments
+# check the arguments with
+./p502filterReads --help
+```
