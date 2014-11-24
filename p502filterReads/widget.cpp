@@ -29,8 +29,10 @@ void Widget::runCommand() {
     QString readsInfile = ui->readsInfileLineEdit->text();
     QString readsOutfile = ui->readsOutfileLineEdit->text();
     QString filterSequences = ui->fastaLineEdit->text();
-    QString compressed = "n";
-    if (readsInfile.right(3) == ".gz") { compressed = "y"; }
+    QString compressedInput = "n";
+    QString compressedOutput = "n";
+    if (readsInfile.right(3) == ".gz") { compressedInput = "y"; }
+    if (readsOutfile.right(3) == ".gz") { compressedOutput = "y"; }
     QString sizing = "n";
     if (ui->sizingCheckBox->isChecked()) { sizing = "y"; }
     QString fixedLength = ui->fixedSizeSpinBox->text();
@@ -43,7 +45,7 @@ void Widget::runCommand() {
     QString uncomplexChar = ui->uncomplexCharLineEdit->text();
     QString uncomplexString = ui->uncomplexStringLineEdit->text();
     QString uncomplexWordsize = ui->uncomplexWordSizeSpinBox->text();
-    temp << readsInfile << readsOutfile << filterSequences << compressed << sizing << fixedLength << chopLeft << chopRight << filter << minQual << skipChar << uncomplexChar << uncomplexString << uncomplexWordsize;
+    temp << readsInfile << readsOutfile << filterSequences << compressedInput << compressedOutput << sizing << fixedLength << chopLeft << chopRight << filter << minQual << skipChar << uncomplexChar << uncomplexString << uncomplexWordsize;
     std::cerr << "running with following parameters:" << std::endl << temp.join("\n").toStdString() << std::endl << std::flush;
     QString command = temp.join("|");
     this->ui->queueListWidget->addItem(command);
