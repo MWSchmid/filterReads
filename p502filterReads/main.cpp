@@ -5,10 +5,10 @@
 #include <getopt.h>
 
 void usage() {
-    std::cerr << std::endl << "Usage is ./programname [-c infile,outfile,fastaFile,compressed,readlength]" << std::endl << std::endl <<
+    std::cerr << std::endl << "Usage is ./programname [-c infile,outfile,fastaFile,compressedInput,compressedOutput,readlength]" << std::endl << std::endl <<
                  "infile must be a sorted bam file, outfile is bam." << std::endl <<
                  "fastaFile is the file containing the sequences you would like to filter" << std::endl <<
-                 "compressed: tells if the infile and outfile are gzip compressed (y or n)" << std::endl <<
+                 "compressedInput/Output: tells if the infile and outfile are gzip compressed (y or n)" << std::endl <<
                  "THIS ABOVE ARE THE MINIMUM REQUIREMENTS - HERE IS A LIST OF ALL OPTIONS AVAILABLE:" << std::endl << std::endl <<
                  "sizing: chop reads according to chopLeft and chopRight (y or n)" << std::endl <<
                  "readlength: chop all reads to this length (int)" << std::endl << std::endl <<
@@ -51,8 +51,8 @@ int main(int argc, char *argv[])
         }
     }
 
-    //command = "/media/DataDisk3/SHORT_READS_ATLAS/SRX111836.fastq.gz,/media/DataDisk3/SHORT_READS_ATLAS/SRX111836_filtered.fastq.gz,/media/DataDisk1/GFF3files/trashySequences.fasta,y";
-    //command = "/media/DataDisk3/SHORT_READS_ATLAS/SRX336073.fastq.gz,/media/DataDisk3/SHORT_READS_ATLAS/SRX336073_filtered.fastq.gz,/media/DataDisk1/GFF3files/trashySequences.fasta,y";
+    //command = "/media/DataDisk3/SHORT_READS_ATLAS/SRX111836.fastq.gz,/media/DataDisk3/SHORT_READS_ATLAS/SRX111836_filtered.fastq.gz,/media/DataDisk1/GFF3files/trashySequences.fasta,y,y";
+    //command = "/media/DataDisk3/SHORT_READS_ATLAS/SRX336073.fastq.gz,/media/DataDisk3/SHORT_READS_ATLAS/SRX336073_filtered.fastq.gz,/media/DataDisk1/GFF3files/trashySequences.fasta,y,y";
 
     //! RUNNING ON COMMANDLINE
     if (commandLine)

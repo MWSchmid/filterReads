@@ -23,7 +23,8 @@ private:
     //! parameters for the read file handlers (taken from the reader/writer header files)
     // some settings:
     bool SIZING;
-    bool COMPRESSED;
+    bool COMPRESSEDINPUT;
+    bool COMPRESSEDOUTPUT;
     // choose a fixed length (starting from left) - is done after chopping
     int FIXEDLENGTH;
     // chop left or right

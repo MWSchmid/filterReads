@@ -19,7 +19,8 @@ coordinator::coordinator()
     this->READSOUTFILE = "";
     //! parameters for the read file handlers (taken from the reader/writer header files)
     this->SIZING = false;
-    this->COMPRESSED = false;
+    this->COMPRESSEDINPUT = false;
+    this->COMPRESSEDOUTPUT = false;
     this->FIXEDLENGTH = 0;
     this->CHOPLEFT = 0;
     this->CHOPRIGHT = 0;
@@ -114,21 +115,22 @@ bool coordinator::doProcess(QString workString) {
     this->READSINFILE = temp.at(0);
     this->READSOUTFILE = temp.at(1);
     this->FILTERSEQUENCES = temp.at(2);
-    if (temp.at(3) == "y") { this->COMPRESSED = true; }
-    if (temp.length() > 4) {
-        if (temp.at(4) == "y") {
+    if (temp.at(3) == "y") { this->COMPRESSEDINPUT = true; }
+    if (temp.at(4) == "y") { this->COMPRESSEDOUTPUT = true; }
+    if (temp.length() > 5) {
+        if (temp.at(5) == "y") {
             this->SIZING = true;
-            this->FIXEDLENGTH = temp.at(5).toInt();
-            this->CHOPLEFT = temp.at(6).toInt();
-            this->CHOPRIGHT = temp.at(7).toInt();
+            this->FIXEDLENGTH = temp.at(6).toInt();
+            this->CHOPLEFT = temp.at(7).toInt();
+            this->CHOPRIGHT = temp.at(8).toInt();
         }
-        if (temp.at(8) == "y") {
+        if (temp.at(9) == "y") {
             this->FILTER = true;
-            this->MINQUAL = temp.at(9).toFloat();
-            this->SKIPCHAR = temp.at(10).at(0);
-            this->UNCOMPLEXCHAR = temp.at(11).at(0);
-            this->UNCOMPLEXSTRING = temp.at(12);
-            this->UNCOMPLEXWORDSIZE = temp.at(13).toInt();
+            this->MINQUAL = temp.at(10).toFloat();
+            this->SKIPCHAR = temp.at(11).at(0);
+            this->UNCOMPLEXCHAR = temp.at(12).at(0);
+            this->UNCOMPLEXSTRING = temp.at(13);
+            this->UNCOMPLEXWORDSIZE = temp.at(14).toInt();
         }
     }
 
@@ -152,7 +154,7 @@ bool coordinator::doProcess(QString workString) {
                                   this->UNCOMPLEXCHAR,
                                   this->UNCOMPLEXSTRING,
                                   this->UNCOMPLEXWORDSIZE,
-                                  this->COMPRESSED);
+                                  this->COMPRESSEDINPUT);
 
     readsHandlerIllumina consumer("",
                                   this->READSOUTFILE,
@@ -173,7 +175,7 @@ bool coordinator::doProcess(QString workString) {
                                   QChar(),
                                   QString(),
                                   0,
-                                  this->COMPRESSED);
+                                  this->COMPRESSEDOUTPUT);
 
     readsFilter filter(this->FILTERSEQUENCES,
                        &this->_bufferSizeINPUT,
