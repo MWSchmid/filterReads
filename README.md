@@ -1,7 +1,7 @@
 filterReads
 ===========
 
-I am currently working on a (rather simple) program that filters short reads using a set of defined sequences which shall be ignored (the motivation behind this was the observation that some RNA-Seq samples have an obscene number of reads aligning to ribosomal DNA - which messes up Rcount-multireads as it results in a huge RAM requirement for the multireads). I uploaded an early version. The filter based on sequences seems to work. The other filters are not tested yet. Note that one requires the qtiocompressor to compile it (more info in future or on request). I recommend running this version in any case from the command line (to see what happens in the background).
+I am currently working on a (rather simple) program that filters short reads using a set of defined sequences which shall be ignored (the motivation behind this was the observation that some RNA-Seq samples have an obscene number of reads aligning to ribosomal DNA - which messes up Rcount-multireads as it results in a huge RAM requirement for the multireads). I uploaded an early version. The filter based on sequences seems to work. The other filters are not tested yet. Note that one requires the qtiocompressor to compile it (more info in future or on request). I recommend running this version in any case from the command line (to see what happens in the background if you are using the GUI).
 
 Additional documentation and so on will follow in the next weeks.
 
