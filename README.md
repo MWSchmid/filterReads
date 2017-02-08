@@ -19,4 +19,4 @@ To run on command-line:
 ./p502filterReads --help
 ```
 
-**TODO**: it's currently assuming PHRED 64 quality scores. Change this to PHRED 33 (all data on SRA is generally in 33).
+Note: it assumes PHRED quality scores with an offset of 33 (inline documentation was wrong before). That's Sanger and Illumina 1.8+ format ([details on wikipedia](https://en.wikipedia.org/wiki/FASTQ_format)). Data on SRA is generally encoded like this.
