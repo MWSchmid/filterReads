@@ -18,3 +18,5 @@ To run on command-line:
 # check the arguments with
 ./p502filterReads --help
 ```
+
+**TODO**: it's currently assuming PHRED 64 quality scores. Change this to PHRED 33!
