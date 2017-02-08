@@ -5,9 +5,9 @@
 #include <iostream>
 #include <cassert>
 
-//! NOTE THAT THE ILLUMINA AND SOLID READS ARE TOTALLY IDENTICAL :D
-// important with solid is that the integer quals are translater to illumina like PHRED64 quals
-// if a -1 quality exists, it is set to 0 - what is a 33/! in dec/ascii PHRED64 format
+//! NOTE THAT THE ILLUMINA AND SOLID READS ARE IDENTICAL
+// important with solid is that the integer quals are translated to illumina like PHRED+33 quals
+// if a -1 quality exists, it is set to 0 - which is a 33/! in dec/ascii PHRED+33 format
 
 /*!
   for a read, there is a minimal information in an ultra small class (char arrays).
@@ -73,7 +73,7 @@ public:
 
     //! get average quality
     float getAverageQuality() {
-        std::cerr << "note: assuming 64-PHRED quality values" << std::endl << std::flush;
+        //std::cerr << "note: assuming 33-PHRED quality values" << std::endl << std::flush;
         int len = this->QUALS.length();
         int qualitySum = -33*len; // correct the offset of 33 in the 64-PHRED quality vals
         const QChar* unicodeQuals = this->QUALS.unicode();
