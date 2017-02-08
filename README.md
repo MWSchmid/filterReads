@@ -19,4 +19,4 @@ To run on command-line:
 ./p502filterReads --help
 ```
 
-**TODO**: it's currently assuming PHRED 64 quality scores. Change this to PHRED 33!
+**TODO**: it's currently assuming PHRED 64 quality scores. Change this to PHRED 33 (all data on SRA is generally in 33).
