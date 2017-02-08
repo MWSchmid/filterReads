@@ -1,4 +1,5 @@
-#include <QtGui/QApplication>
+#include <QtWidgets/QApplication>
+#include <QtCore/QCoreApplication>
 #include <iostream>
 #include "widget.h"
 #include "consoleRunner.h"

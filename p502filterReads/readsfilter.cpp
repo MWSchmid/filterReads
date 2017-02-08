@@ -4,6 +4,7 @@
 #include "readsfilter.h"
 
 #include <QtGui>
+#include <QtCore>
 
 #include <iostream>
 
@@ -355,8 +356,7 @@ void readsFilter::run() {
         ++countIter;
     }
 
-    emit this->finished();
-
+    //emit this->finished(); // this cannot be done anymore in Qt5.8, should be sent automatically?
 }
 
 

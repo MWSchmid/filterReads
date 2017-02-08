@@ -34,7 +34,7 @@ protected:
         processor.addWork("STOPTHREAD");
         processor.wait();
         std::cerr << "stopping p502filterReads" << std::endl << std::flush;
-        emit this->finished();
+        //emit this->finished(); // this cannot be done anymore in Qt5.8, should be sent automatically
     }
 
 private slots:

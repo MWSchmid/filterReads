@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui widgets
 
 TARGET = p502filterReads
 TEMPLATE = app
@@ -31,3 +31,5 @@ HEADERS += ../p502_SOURCE/fastaHandler/fastahandler.h \
 include(../qtiocompressor-2.3_1-opensource/src/qtiocompressor.pri)
 
 FORMS    += widget.ui
+
+QMAKE_CXXFLAGS += -D_GLIBCXX_USE_CXX11_ABI=0
