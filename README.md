@@ -5,6 +5,10 @@ I am currently working on a (rather simple) program that filters short reads usi
 
 [Binary for Ubuntu-like linux](https://github.com/MWSchmid/filterReads/blob/master/p502filterReads_linux_64bit?raw=true)
 
+Note: it assumes PHRED quality scores with an offset of 33 (inline documentation and messaging was wrong before). That's Sanger and Illumina 1.8+ format ([details on wikipedia](https://en.wikipedia.org/wiki/FASTQ_format)). Data on SRA is generally encoded like this. It's fixed in the Qt5 binary (which is untested though):
+
+[Binary for Ubuntu-like linux (Qt5, untested)](https://github.com/MWSchmid/filterReads/blob/master/p502filterReads_linux_64bit_qt5?raw=true)
+
 To start a GUI:
 
 ```shell
@@ -19,4 +23,4 @@ To run on command-line:
 ./p502filterReads --help
 ```
 
-Note: it assumes PHRED quality scores with an offset of 33 (inline documentation was wrong before). That's Sanger and Illumina 1.8+ format ([details on wikipedia](https://en.wikipedia.org/wiki/FASTQ_format)). Data on SRA is generally encoded like this.
+
