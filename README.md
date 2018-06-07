@@ -23,4 +23,13 @@ To run on command-line:
 ./p502filterReads --help
 ```
 
+You may also need to copy the iocompressor libraries
+
+```shell
+sudo cp /path/to/filterReads/qtiocompressor-2.3_1-opensource/lib/libQtSolutions_IOCompressor-2.3.so.1.0.0 /usr/local/lib/
+sudo ln -s /usr/local/lib/libQtSolutions_IOCompressor-2.3.so.1.0.0 /usr/local/lib/libQtSolutions_IOCompressor-2.3.so
+sudo ln -s /usr/local/lib/libQtSolutions_IOCompressor-2.3.so.1.0.0 /usr/local/lib/libQtSolutions_IOCompressor-2.3.so.1
+sudo ln -s /usr/local/lib/libQtSolutions_IOCompressor-2.3.so.1.0.0 /usr/local/lib/libQtSolutions_IOCompressor-2.3.so.1.0
+```
+
 
