@@ -30,6 +30,8 @@ sudo cp /path/to/filterReads/qtiocompressor-2.3_1-opensource/lib/libQtSolutions_
 sudo ln -s /usr/local/lib/libQtSolutions_IOCompressor-2.3.so.1.0.0 /usr/local/lib/libQtSolutions_IOCompressor-2.3.so
 sudo ln -s /usr/local/lib/libQtSolutions_IOCompressor-2.3.so.1.0.0 /usr/local/lib/libQtSolutions_IOCompressor-2.3.so.1
 sudo ln -s /usr/local/lib/libQtSolutions_IOCompressor-2.3.so.1.0.0 /usr/local/lib/libQtSolutions_IOCompressor-2.3.so.1.0
+# that may be needed as well:
+export LD_LIBRARY_PATH="/usr/local/lib"
 ```
 
 
